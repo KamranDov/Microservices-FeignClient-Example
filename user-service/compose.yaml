@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  db-user-service:
+    image: postgres
+    container_name: db-user-service
+    ports:
+      - "5450:5432"
+    environment:
+      - POSTGRES_DB=user_service
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123456789root
+    volumes:
+      - ./db-user-service:/var/lib/postgresql/data
+    networks:
+      - feign-client-network
+volumes:
+  db-user-service:
+    driver: local
+networks:
+  feign-client-network:
