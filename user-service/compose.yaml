@@ -6,9 +6,9 @@ services:
     ports:
       - "5450:5432"
     environment:
-      - POSTGRES_DB=user_service
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=123456789root
+      - POSTGRES_DB= your db name
+      - POSTGRES_USER=your db username
+      - POSTGRES_PASSWORD=your db password
     volumes:
       - ./db-user-service:/var/lib/postgresql/data
     networks:
